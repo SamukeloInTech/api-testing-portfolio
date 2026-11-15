@@ -1,0 +1,170 @@
+{
+  "info": {
+    "_postman_id": "a3582cac-f0a2-48ab-ba3d-424f7b0ebaa1",
+    "name": "Restful Booker API Suite",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60206460",
+    "_collection_link": "https://go.postman.co/collection/60206460-a3582cac-f0a2-48ab-ba3d-424f7b0ebaa1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "create booking",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Booking ID is generated\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response.bookingid).to.exist;\r\n});\r\n\r\npm.test(\"First name matches the input\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response.booking.firstname).to.eql(\"Samukelo\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"firstname\": \"Samukelo\",\r\n  \"lastname\": \"Cele\",\r\n  \"totalprice\": 1500,\r\n  \"depositpaid\": true,\r\n  \"bookingdates\": {\r\n    \"checkin\": \"2024-01-01\",\r\n    \"checkout\": \"2024-01-05\"\r\n  },\r\n  \"additionalneeds\": \"Breakfast\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://restful-booker.herokuapp.com/booking",
+          "protocol": "https",
+          "host": [
+            "restful-booker",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "booking"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get booking",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"First name matches\", function () {\r\n    const response = pm.response.json();\r\n    pm.expect(response.firstname).to.eql(\"Samukelo\");\r\n});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://restful-booker.herokuapp.com/booking/ 970",
+          "protocol": "https",
+          "host": [
+            "restful-booker",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "booking",
+            " 970"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "get booking",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://restful-booker.herokuapp.com/booking/1704",
+              "protocol": "https",
+              "host": [
+                "restful-booker",
+                "herokuapp",
+                "com"
+              ],
+              "path": [
+                "booking",
+                "1704"
+              ]
+            }
+          },
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": ":status",
+              "value": "200"
+            },
+            {
+              "key": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "date",
+              "value": "Sun, 15 Nov 2026 13:46:47 GMT"
+            },
+            {
+              "key": "etag",
+              "value": "W/\"ad-qVOwbuWHbDwCZw3WBbABdLcSoa8\""
+            },
+            {
+              "key": "nel",
+              "value": "{\"report_to\":\"heroku-nel\",\"response_headers\":[\"Via\"],\"max_age\":3600,\"success_fraction\":0.01,\"failure_fraction\":0.1}"
+            },
+            {
+              "key": "report-to",
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=na9o%2FyUxlOK%2F9Ri3z7S%2BRlCIRDlXFLFntaVamspCOhk%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1794750407\"}],\"max_age\":3600}"
+            },
+            {
+              "key": "reporting-endpoints",
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=na9o%2FyUxlOK%2F9Ri3z7S%2BRlCIRDlXFLFntaVamspCOhk%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1794750407\""
+            },
+            {
+              "key": "server",
+              "value": "Heroku"
+            },
+            {
+              "key": "via",
+              "value": "2.0 heroku-router"
+            },
+            {
+              "key": "x-powered-by",
+              "value": "Express"
+            },
+            {
+              "key": "content-length",
+              "value": "173"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"firstname\": \"Samukelo\",\n  \"lastname\": \"Cele\",\n  \"totalprice\": 1500,\n  \"depositpaid\": true,\n  \"bookingdates\": {\n    \"checkin\": \"2024-01-01\",\n    \"checkout\": \"2024-01-05\"\n  },\n  \"additionalneeds\": \"Breakfast\"\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "test",
+      "script": {
+        "exec": [
+          "pm.test(\"Status code is successful (2xx)\", function () {\r",
+          "    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);\r",
+          "});\r",
+          "\r",
+          "pm.test(\"Response time is under 2000ms\", function () {\r",
+          "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+          "});"
+        ],
+        "type": "text/javascript"
+      }
+    }
+  ]
+}
