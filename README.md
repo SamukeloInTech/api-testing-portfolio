@@ -20,6 +20,10 @@ Both suites cover the following API operations:
 ## ⚙️ CI/CD Pipeline (GitHub Actions)
 This project is integrated with **GitHub Actions**. Every time code is pushed to the `main` branch, the `.github/workflows/api-tests.yml` pipeline automatically triggers. It spins up an Ubuntu server, installs the Python dependencies, and runs the `pytest` suite to ensure the API is functioning correctly.
 
+Below is a screenshot of the GitHub Actions pipeline running the Python tests automatically on a cloud server.
+
+![CI/CD Pipeline Success](./CI_CD_Pipeline_Success.png)
+
 ## 📸 Manual Test Execution Evidence
 Below is a screenshot of the Postman Collection Runner executing the suite. All 8 assertions passed successfully.
 
