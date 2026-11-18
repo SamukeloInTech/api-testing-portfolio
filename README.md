@@ -8,7 +8,9 @@ This repository contains a complete API testing portfolio for the **Restful Book
 
 ## 📂 Repository Structure
 *   **`/Postman`**: Contains the manual Postman collection and evidence of the collection runner passing 8 assertions.
-*   **`/Python-Automation`**: Contains the automated Pytest script and CI/CD pipeline configuration.
+*   **`/test_booking.py`**: The automated Pytest script using Python's `requests` library.
+*   **`/requirements.txt`**: The dependencies needed to run the Python tests.
+*   **`/.github/workflows/api-tests.yml`**: The CI/CD pipeline configuration.
 
 ## 🧪 Test Coverage
 Both suites cover the following API operations:
@@ -27,6 +29,5 @@ Below is a screenshot of the Postman Collection Runner executing the suite. All 
 The Python script automatically handles the dynamic data flow (creating a booking, extracting the ID, and fetching it). 
 
 ### How to run locally
-1. Navigate to the Python folder: `cd Python-Automation` *(or wherever your test file is)*
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the test: `pytest test_booking.py -v`
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run the test: `pytest test_booking.py -v`
